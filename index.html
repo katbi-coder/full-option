@@ -3,224 +3,999 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>خدمات الحلول الرقمية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <title>باقة الخدمات الرقمية - مغسلة فل أوبشن | شركة كاتبي</title>
+    <meta name="description" content="باقة شاملة من الخدمات الرقمية لمغسلة فل أوبشن - تصوير احترافي، إدارة مواقع التواصل، حملات إعلانية وأكثر">
+    <meta name="keywords" content="خدمات رقمية، مغسلة، تسويق رقمي، تصوير احترافي، إدارة مواقع التواصل">
+    <meta name="author" content="شركة كاتبي للحلول الرقمية">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        body { font-family: 'Tajawal', Tahoma, Geneva, Verdana, sans-serif; background: #f9f9f9; margin: 0; padding: 0; }
-        .container { max-width: 600px; margin: 16px auto; background: #fff; border-radius: 14px; box-shadow: 0 2px 16px #e0e0e0; padding: 12px 4px; }
-        h1 { color: #2d3e50; text-align: center; font-size: 1.35em; margin-bottom: 10px; }
-        ul { list-style: none; padding: 0; margin: 0; }
-        li { display: flex; align-items: flex-start; justify-content: space-between; background: #f1f5fa; margin: 0 0 14px 0; padding: 14px 10px 10px 10px; border-radius: 10px; font-size: 1em; gap: 8px; flex-wrap: wrap; box-shadow: 0 1px 4px #e0e0e0; border-bottom: 2px solid #e9e9e9; }
-        .service-label { flex: 1 1 120px; min-width: 120px; font-size: 1.08em; line-height: 1.7; }
-        .service-desc { display: block; color: #0a7cff; font-size: 0.99em; margin-top: 4px; margin-bottom: 2px; font-weight: 500; letter-spacing: 0.01em; }
-        .service-price { color: #2196f3; font-weight: bold; min-width: 90px; text-align: center; font-size: 1.08em; transition: color 0.2s; margin-top: 2px; }
-        .service-price.strike { text-decoration: line-through; color: #b0b0b0; }
-        .switch input:active + .slider { box-shadow: 0 0 8px #4cd964cc; }
-        .slider { transition: .4s, box-shadow .2s; }
-        @media (max-width: 600px) {
-            .container { padding: 4px 1vw; border-radius: 0; box-shadow: none; margin: 0; }
-            h1 { font-size: 1.08em; }
-            li { flex-direction: column; align-items: flex-start; font-size: 1em; padding: 12px 4px 8px 4px; border-radius: 8px; margin-bottom: 12px; box-shadow: 0 1px 2px #e0e0e0; }
-            .service-label, .service-price, .switch { margin-bottom: 7px; min-width: unset; text-align: right; }
-            .service-label { font-size: 1.01em; }
-            .service-price { font-size: 1em; }
-            #total-box { font-size: 1em; padding: 10px; border-radius: 8px; }
-            #notes { font-size: 1em; border-radius: 8px; }
-            #whatsapp-btn { font-size: 1.08em; border-radius: 8px; min-height: 48px; }
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #e74c3c;
+            --light-bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --text-secondary: #7f8c8d;
+            --border-color: #e9ecef;
+            --shadow-light: 0 2px 10px rgba(0,0,0,0.08);
+            --shadow-medium: 0 4px 20px rgba(0,0,0,0.12);
+            --border-radius: 12px;
+            --border-radius-sm: 8px;
+            --transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
         }
 
-        @media (prefers-color-scheme: dark) {
-            body { background: #15181a; }
-            .container { background: #23272b; box-shadow: 0 2px 16px #1118; }
-            h1, #total-box { color: #fff; }
-            li { background: #232b33; border-bottom: 2px solid #232b33; box-shadow: 0 1px 4px #1118; }
-            .service-label, .service-desc { color: #b8e0ff; }
-            .service-price { color: #4cd964; }
-            .service-price.strike { color: #888; }
-            #notes { background: #181a1b; color: #fff; border: 1px solid #333; }
-            #whatsapp-btn { background: #128c7e; color: #fff; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
+
+        body {
+            font-family: 'Tajawal', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 20px 0;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium);
+            padding: 30px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--success-color));
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .company-name {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: var(--border-radius-sm);
+            font-size: 0.9em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .control-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .control-btn.secondary {
+            background: var(--text-secondary);
+        }
+
+        .control-btn.secondary:hover {
+            background: #6c757d;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            background: var(--light-bg);
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border: 2px solid transparent;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--secondary-color);
+            transform: scaleY(0);
+            transition: var(--transition);
+        }
+
+        li:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--secondary-color);
+        }
+
+        li:hover::before {
+            transform: scaleY(1);
+        }
+
+        li.selected {
+            background: rgba(52, 152, 219, 0.05);
+            border-color: var(--secondary-color);
+        }
+
+        li.selected::before {
+            transform: scaleY(1);
+            background: var(--success-color);
+        }
+
+        .service-content {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .service-info {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .service-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .service-desc {
+            color: var(--text-secondary);
+            font-size: 0.95em;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .service-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .service-price {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--success-color);
+            min-width: 100px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .service-price.strike {
+            text-decoration: line-through;
+            color: var(--text-secondary);
+            opacity: 0.6;
+        }
+
         .switch {
             position: relative;
             display: inline-block;
-            width: 48px;
-            height: 26px;
+            width: 52px;
+            height: 28px;
         }
-        .switch input { display: none; }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
         .slider {
             position: absolute;
             cursor: pointer;
-            top: 0; left: 0; right: 0; bottom: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background-color: #ccc;
-            transition: .4s;
-            border-radius: 26px;
+            transition: var(--transition);
+            border-radius: 28px;
         }
+
         .slider:before {
             position: absolute;
             content: "";
-            height: 20px;
-            width: 20px;
+            height: 22px;
+            width: 22px;
             left: 3px;
             bottom: 3px;
             background-color: white;
-            transition: .4s;
+            transition: var(--transition);
             border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
+
         input:checked + .slider {
-            background-color: #4cd964;
+            background-color: var(--success-color);
         }
+
         input:checked + .slider:before {
-            transform: translateX(22px);
+            transform: translateX(24px);
+        }
+
+        .slider:hover {
+            box-shadow: 0 0 10px rgba(39, 174, 96, 0.3);
+        }
+
+        .total-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin: 30px 0 20px;
+            text-align: center;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .total-label {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            opacity: 0.9;
+        }
+
+        .total-price {
+            font-size: 2em;
+            font-weight: 700;
+        }
+
+        .total-savings {
+            font-size: 0.9em;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        #notes {
+            width: 100%;
+            min-height: 60px;
+            padding: 15px;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-family: 'Tajawal', Arial, sans-serif;
+            font-size: 1em;
+            resize: vertical;
+            transition: var(--transition);
+            background: var(--card-bg);
+        }
+
+        #notes:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .whatsapp-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            border: none;
+            padding: 18px;
+            border-radius: var(--border-radius);
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-family: 'Tajawal', Arial, sans-serif;
+            margin-top: 20px;
+            box-shadow: var(--shadow-light);
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-medium);
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+        }
+
+        .whatsapp-btn:active {
+            transform: translateY(0);
+        }
+
+        .whatsapp-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Toast Notifications */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--success-color);
+            color: white;
+            padding: 15px 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium);
+            transform: translateX(400px);
+            transition: var(--transition);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast.error {
+            background: var(--danger-color);
+        }
+
+        .toast.warning {
+            background: var(--warning-color);
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                margin: 0;
+                padding: 20px 15px;
+                border-radius: var(--border-radius-sm);
+            }
+
+            h1 {
+                font-size: 1.4em;
+            }
+
+            .subtitle {
+                font-size: 1em;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .control-btn {
+                justify-content: center;
+            }
+
+            li {
+                padding: 15px;
+            }
+
+            .service-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .service-controls {
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .total-section {
+                padding: 20px 15px;
+            }
+
+            .total-price {
+                font-size: 1.6em;
+            }
+
+            .whatsapp-btn {
+                font-size: 1.1em;
+                padding: 16px;
+            }
+
+            .toast {
+                right: 10px;
+                left: 10px;
+                transform: translateY(-100px);
+            }
+
+            .toast.show {
+                transform: translateY(0);
+            }
+        }
+
+        /* Dark mode */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --card-bg: #2c3e50;
+                --light-bg: #34495e;
+                --text-color: #ecf0f1;
+                --text-secondary: #bdc3c7;
+                --border-color: #4a5a6a;
+            }
+
+            body {
+                background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            }
+
+            .container {
+                background: var(--card-bg);
+            }
+
+            .subtitle {
+                color: var(--text-secondary);
+            }
+
+            #notes {
+                background: var(--light-bg);
+                color: var(--text-color);
+                border-color: var(--border-color);
+            }
+
+            li {
+                background: var(--light-bg);
+            }
+
+            .service-title {
+                color: var(--text-color);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>بـاقة الخدمات الرقمية لمغسلة فل أوبشن</h1>
-        <div style="text-align:center; color:#555; margin-bottom:18px; font-size:1.05em;">
-            جميع الخدمات التالية مقدمة باحترافية من <b>شركة كاتبي للحلول الرقمية</b>،<br>
-            لتطوير حضور مغسلة فل أوبشن على الإنترنت وزيادة التفاعل مع العملاء.
+    <div class="container fade-in">
+        <div class="header">
+            <h1><i class="fas fa-gem"></i> باقة الخدمات الرقمية لمغسلة فل أوبشن</h1>
+            <div class="subtitle">
+                جميع الخدمات التالية مقدمة باحترافية من <span class="company-name">شركة كاتبي للحلول الرقمية</span>،<br>
+                لتطوير حضور مغسلة فل أوبشن على الإنترنت وزيادة التفاعل مع العملاء.
+            </div>
         </div>
-        <ul id="services-list">
-            <li>
-                <span class="service-label">جلسة تصوير احترافية للمنتجات أو الفريق
-                    <span class="service-desc">تصوير صور عالية الجودة للمنتجات أو فريق العمل لعرضها على المنصات الرقمية.</span>
-                </span>
-                <span class="service-price" data-price="1200">1,200 د.إ</span>
-                <label class="switch">
-                    <input type="checkbox" checked>
-                    <span class="slider"></span>
-                </label>
+
+        <div class="controls">
+            <button class="control-btn" id="select-all-btn" onclick="selectAll()">
+                <i class="fas fa-check-double"></i> اختيار الكل
+            </button>
+            <button class="control-btn secondary" id="clear-all-btn" onclick="clearAll()">
+                <i class="fas fa-times"></i> إلغاء الكل
+            </button>
+        </div>
+
+        <ul id="services-list" role="list">
+            <li role="listitem">
+                <div class="service-content">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <i class="fas fa-camera"></i> جلسة تصوير احترافية للمنتجات أو الفريق
+                        </div>
+                        <div class="service-desc">تصوير صور عالية الجودة للمنتجات أو فريق العمل لعرضها على المنصات الرقمية.</div>
+                    </div>
+                    <div class="service-controls">
+                        <span class="service-price" data-price="1200">1,200 د.إ</span>
+                        <label class="switch" aria-label="تفعيل جلسة التصوير الاحترافية">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
             </li>
-            <li>
-                <span class="service-label">إنتاج مقطعين (ريلز) احترافيين شهرياً على إنستغرام
-                    <span class="service-desc">إعداد وتصوير وتحرير فيديوهات قصيرة وجذابة لزيادة التفاعل على إنستغرام.</span>
-                </span>
-                <span class="service-price" data-price="900">900 د.إ</span>
-                <label class="switch">
-                    <input type="checkbox" checked>
-                    <span class="slider"></span>
-                </label>
+            <li role="listitem">
+                <div class="service-content">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <i class="fas fa-video"></i> إنتاج مقطعين (ريلز) احترافيين شهرياً على إنستغرام
+                        </div>
+                        <div class="service-desc">إعداد وتصوير وتحرير فيديوهات قصيرة وجذابة لزيادة التفاعل على إنستغرام.</div>
+                    </div>
+                    <div class="service-controls">
+                        <span class="service-price" data-price="900">900 د.إ</span>
+                        <label class="switch" aria-label="تفعيل إنتاج الريلز">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
             </li>
-            <li>
-                <span class="service-label">تصميم ونشر منشورين أسبوعياً على وسائل التواصل الاجتماعي
-                    <span class="service-desc">تصميم منشورات إبداعية ونشرها بشكل منتظم على حسابات التواصل الاجتماعي.</span>
-                </span>
-                <span class="service-price" data-price="800">800 د.إ</span>
-                <label class="switch">
-                    <input type="checkbox" checked>
-                    <span class="slider"></span>
-                </label>
+            <li role="listitem">
+                <div class="service-content">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <i class="fas fa-share-alt"></i> تصميم ونشر منشورين أسبوعياً على وسائل التواصل الاجتماعي
+                        </div>
+                        <div class="service-desc">تصميم منشورات إبداعية ونشرها بشكل منتظم على حسابات التواصل الاجتماعي.</div>
+                    </div>
+                    <div class="service-controls">
+                        <span class="service-price" data-price="800">800 د.إ</span>
+                        <label class="switch" aria-label="تفعيل تصميم المنشورات">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
             </li>
-            <li>
-                <span class="service-label">إدارة الملف التجاري على خرائط جوجل (Google My Business)
-                    <span class="service-desc">تحديث بيانات المغسلة، إضافة الصور، والرد على التقييمات لزيادة الظهور على خرائط جوجل.</span>
-                </span>
-                <span class="service-price" data-price="600">600 د.إ</span>
-                <label class="switch">
-                    <input type="checkbox" checked>
-                    <span class="slider"></span>
-                </label>
+            <li role="listitem">
+                <div class="service-content">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <i class="fas fa-map-marker-alt"></i> إدارة الملف التجاري على خرائط جوجل (Google My Business)
+                        </div>
+                        <div class="service-desc">تحديث بيانات المغسلة، إضافة الصور، والرد على التقييمات لزيادة الظهور على خرائط جوجل.</div>
+                    </div>
+                    <div class="service-controls">
+                        <span class="service-price" data-price="600">600 د.إ</span>
+                        <label class="switch" aria-label="تفعيل إدارة خرائط جوجل">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
             </li>
-            <li>
-                <span class="service-label">إدارة الحملات الإعلانية على جوجل باحترافية
-                    <span class="service-desc">إعداد وإدارة الحملات الإعلانية على جوجل لزيادة العملاء المحتملين وتحقيق أفضل النتائج.</span>
-                </span>
-                <span class="service-price" data-price="1100">1,100 د.إ</span>
-                <label class="switch">
-                    <input type="checkbox" checked>
-                    <span class="slider"></span>
-                </label>
+            <li role="listitem">
+                <div class="service-content">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <i class="fas fa-bullhorn"></i> إدارة الحملات الإعلانية على جوجل باحترافية
+                        </div>
+                        <div class="service-desc">إعداد وإدارة الحملات الإعلانية على جوجل لزيادة العملاء المحتملين وتحقيق أفضل النتائج.</div>
+                    </div>
+                    <div class="service-controls">
+                        <span class="service-price" data-price="1100">1,100 د.إ</span>
+                        <label class="switch" aria-label="تفعيل الحملات الإعلانية">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
             </li>
-            <li>
-                <span class="service-label">إعداد وتحليل تقارير الأداء الشهرية لجميع المنصات
-                    <span class="service-desc">تقديم تقارير مفصلة عن أداء الحملات والمنصات مع توصيات للتحسين.</span>
-                </span>
-                <span class="service-price" data-price="700">700 د.إ</span>
-                <label class="switch">
-                    <input type="checkbox" checked>
-                    <span class="slider"></span>
-                </label>
+            <li role="listitem">
+                <div class="service-content">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <i class="fas fa-chart-line"></i> إعداد وتحليل تقارير الأداء الشهرية لجميع المنصات
+                        </div>
+                        <div class="service-desc">تقديم تقارير مفصلة عن أداء الحملات والمنصات مع توصيات للتحسين.</div>
+                    </div>
+                    <div class="service-controls">
+                        <span class="service-price" data-price="700">700 د.إ</span>
+                        <label class="switch" aria-label="تفعيل تقارير الأداء">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
             </li>
-            <li>
-                <span class="service-label">الرد على استفسارات العملاء وإدارة الرسائل المباشرة
-                    <span class="service-desc">متابعة الرسائل والتعليقات والرد على استفسارات العملاء بسرعة واحترافية.</span>
-                </span>
-                <span class="service-price" data-price="650">650 د.إ</span>
-                <label class="switch">
-                    <input type="checkbox" checked>
-                    <span class="slider"></span>
-                </label>
+            <li role="listitem">
+                <div class="service-content">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <i class="fas fa-comments"></i> الرد على استفسارات العملاء وإدارة الرسائل المباشرة
+                        </div>
+                        <div class="service-desc">متابعة الرسائل والتعليقات والرد على استفسارات العملاء بسرعة واحترافية.</div>
+                    </div>
+                    <div class="service-controls">
+                        <span class="service-price" data-price="650">650 د.إ</span>
+                        <label class="switch" aria-label="تفعيل إدارة الرسائل">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
             </li>
-            <li>
-                <span class="service-label">تصميم وتحديث الهوية البصرية للعلامة التجارية
-                    <span class="service-desc">تصميم شعار ومواد بصرية مميزة تعكس هوية المغسلة وتعزز حضورها الرقمي.</span>
-                </span>
-                <span class="service-price" data-price="950">950 د.إ</span>
-                <label class="switch">
-                    <input type="checkbox" checked>
-                    <span class="slider"></span>
-                </label>
+            <li role="listitem">
+                <div class="service-content">
+                    <div class="service-info">
+                        <div class="service-title">
+                            <i class="fas fa-palette"></i> تصميم وتحديث الهوية البصرية للعلامة التجارية
+                        </div>
+                        <div class="service-desc">تصميم شعار ومواد بصرية مميزة تعكس هوية المغسلة وتعزز حضورها الرقمي.</div>
+                    </div>
+                    <div class="service-controls">
+                        <span class="service-price" data-price="950">950 د.إ</span>
+                        <label class="switch" aria-label="تفعيل تصميم الهوية البصرية">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
             </li>
         </ul>
-        <div id="total-box" style="margin-top:30px; text-align:center; font-size:1.2em; font-weight:bold; color:#2d3e50; background:#f1f5fa; border-radius:6px; padding:16px;">المجموع: <span id="total-price">0</span> د.إ</div>
-        <textarea id="notes" placeholder="ملاحظات أو طلبات خاصة (اختياري)" style="width:100%;margin-top:16px;min-height:48px;resize:vertical;border-radius:7px;border:1px solid #d0d0d0;padding:10px;font-family:'Tajawal',Tahoma,sans-serif;font-size:1em;box-sizing:border-box;"></textarea>
-        <button id="whatsapp-btn" style="width:100%;margin-top:18px;background:#25d366;color:#fff;font-size:1.1em;padding:14px 0;border:none;border-radius:8px;cursor:pointer;transition:background 0.2s;font-weight:bold;display:block;display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Tajawal',Tahoma,sans-serif;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32" style="vertical-align:middle;"><circle cx="16" cy="16" r="16" fill="#25d366"/><path fill="#fff" d="M25.47 22.37c-.37-.19-2.18-1.08-2.52-1.2-.34-.13-.59-.19-.84.19-.25.37-.97 1.2-1.19 1.44-.22.25-.44.28-.81.09-.37-.19-1.56-.58-2.97-1.85-1.1-.98-1.85-2.19-2.07-2.56-.22-.38-.02-.58.17-.77.18-.18.4-.47.6-.7.2-.23.27-.39.41-.64.13-.25.07-.47-.03-.66-.09-.19-.84-2.03-1.15-2.78-.3-.72-.58-.62-.8-.63-.21-.01-.46-.01-.71-.01-.25 0-.66.09-1.01.47-.34.38-1.32 1.29-1.32 3.14 0 1.85 1.35 3.64 1.54 3.89.19.25 2.66 4.08 6.45 5.56.9.31 1.6.5 2.15.64.9.23 1.72.2 2.37.12.72-.09 2.18-.89 2.49-1.75.31-.86.31-1.6.22-1.75-.09-.15-.33-.24-.7-.43z"/></svg>
-            اعتماد الخدمات وإرسال الطلب عبر واتساب
+
+        <div class="total-section" id="total-box">
+            <div class="total-label"><i class="fas fa-calculator"></i> إجمالي التكلفة</div>
+            <div class="total-price"><span id="total-price">0</span> د.إ</div>
+            <div class="total-savings" id="total-savings" style="display: none;">
+                <i class="fas fa-percentage"></i> توفير: <span id="savings-amount">0</span> د.إ
+            </div>
+        </div>
+
+        <textarea id="notes" placeholder="ملاحظات أو طلبات خاصة (اختياري)" aria-label="ملاحظات إضافية"></textarea>
+        
+        <button class="whatsapp-btn" id="whatsapp-btn" aria-label="إرسال الطلب عبر واتساب">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32">
+                <circle cx="16" cy="16" r="16" fill="currentColor" opacity="0.2"/>
+                <path fill="currentColor" d="M25.47 22.37c-.37-.19-2.18-1.08-2.52-1.2-.34-.13-.59-.19-.84.19-.25.37-.97 1.2-1.19 1.44-.22.25-.44.28-.81.09-.37-.19-1.56-.58-2.97-1.85-1.1-.98-1.85-2.19-2.07-2.56-.22-.38-.02-.58.17-.77.18-.18.4-.47.6-.7.2-.23.27-.39.41-.64.13-.25.07-.47-.03-.66-.09-.19-.84-2.03-1.15-2.78-.3-.72-.58-.62-.8-.63-.21-.01-.46-.01-.71-.01-.25 0-.66.09-1.01.47-.34.38-1.32 1.29-1.32 3.14 0 1.85 1.35 3.64 1.54 3.89.19.25 2.66 4.08 6.45 5.56.9.31 1.6.5 2.15.64.9.23 1.72.2 2.37.12.72-.09 2.18-.89 2.49-1.75.31-.86.31-1.6.22-1.75-.09-.15-.33-.24-.7-.43z"/>
+            </svg>
+            <span id="btn-text">اعتماد الخدمات وإرسال الطلب عبر واتساب</span>
         </button>
     </div>
-<script>
-function calculateTotalAndStrike() {
-    let total = 0;
-    document.querySelectorAll('#services-list li').forEach(li => {
-        const checkbox = li.querySelector('input[type="checkbox"]');
-        const priceSpan = li.querySelector('.service-price');
-        if (checkbox && priceSpan) {
-            if (checkbox.checked) {
-                priceSpan.classList.remove('strike');
-                total += parseInt(priceSpan.getAttribute('data-price'));
+
+    <!-- Toast Notifications -->
+    <div class="toast" id="toast" role="alert" aria-live="polite">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">تم الحفظ بنجاح!</span>
+    </div>
+    <script>
+        // Global variables
+        const ORIGINAL_TOTAL = 6900; // إجمالي جميع الخدمات
+        let isLoading = false;
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', function() {
+            calculateTotalAndStrike();
+            loadSavedSelections();
+            addEventListeners();
+            animateOnLoad();
+        });
+
+        // Add event listeners
+        function addEventListeners() {
+            document.querySelectorAll('#services-list input[type="checkbox"]').forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    updateServiceVisual(this.closest('li'));
+                    calculateTotalAndStrike();
+                    saveSelections();
+                    showToast('تم تحديث الاختيار', 'success');
+                });
+            });
+
+            // Save notes on change
+            document.getElementById('notes').addEventListener('input', debounce(saveSelections, 500));
+        }
+
+        // Calculate total and apply visual effects
+        function calculateTotalAndStrike() {
+            let total = 0;
+            let selectedCount = 0;
+
+            document.querySelectorAll('#services-list li').forEach(li => {
+                const checkbox = li.querySelector('input[type="checkbox"]');
+                const priceSpan = li.querySelector('.service-price');
+                
+                if (checkbox && priceSpan) {
+                    const price = parseInt(priceSpan.getAttribute('data-price'));
+                    
+                    if (checkbox.checked) {
+                        priceSpan.classList.remove('strike');
+                        li.classList.add('selected');
+                        total += price;
+                        selectedCount++;
+                    } else {
+                        priceSpan.classList.add('strike');
+                        li.classList.remove('selected');
+                    }
+                }
+            });
+
+            // Update total with animation
+            animateNumber('total-price', total);
+            
+            // Show savings if applicable
+            const savings = ORIGINAL_TOTAL - total;
+            const savingsElement = document.getElementById('total-savings');
+            const savingsAmount = document.getElementById('savings-amount');
+            
+            if (savings > 0 && selectedCount < 8) {
+                savingsAmount.textContent = savings.toLocaleString();
+                savingsElement.style.display = 'inline-block';
             } else {
-                priceSpan.classList.add('strike');
+                savingsElement.style.display = 'none';
+            }
+
+            // Update button state
+            updateWhatsappButton(selectedCount);
+        }
+
+        // Update visual state of service item
+        function updateServiceVisual(li) {
+            li.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                li.style.transform = '';
+            }, 150);
+        }
+
+        // Animate number change
+        function animateNumber(elementId, targetValue) {
+            const element = document.getElementById(elementId);
+            const currentValue = parseInt(element.textContent.replace(/,/g, '')) || 0;
+            const increment = (targetValue - currentValue) / 20;
+            let current = currentValue;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if ((increment > 0 && current >= targetValue) || (increment < 0 && current <= targetValue)) {
+                    current = targetValue;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString();
+            }, 20);
+        }
+
+        // Update WhatsApp button state
+        function updateWhatsappButton(selectedCount) {
+            const btn = document.getElementById('whatsapp-btn');
+            const btnText = document.getElementById('btn-text');
+            
+            if (selectedCount === 0) {
+                btn.disabled = true;
+                btnText.textContent = 'يرجى اختيار خدمة واحدة على الأقل';
+            } else {
+                btn.disabled = false;
+                btnText.textContent = 'اعتماد الخدمات وإرسال الطلب عبر واتساب';
             }
         }
-    });
-    document.getElementById('total-price').textContent = total.toLocaleString();
-}
 
-document.querySelectorAll('#services-list input[type="checkbox"]').forEach(cb => {
-    cb.addEventListener('change', calculateTotalAndStrike);
-});
-
-// حساب المجموع وتحديث الشطب عند تحميل الصفحة
-window.addEventListener('DOMContentLoaded', calculateTotalAndStrike);
-
-// زر إرسال الطلب عبر واتساب
-document.getElementById('whatsapp-btn').onclick = function() {
-    let selected = [];
-    document.querySelectorAll('#services-list li').forEach(li => {
-        const checkbox = li.querySelector('input[type="checkbox"]');
-        const label = li.querySelector('.service-label');
-        const price = li.querySelector('.service-price');
-        if (checkbox && checkbox.checked && label && price) {
-            selected.push(`- ${label.childNodes[0].textContent.trim()} ( ${price.textContent.trim()} )`);
+        // Select all services
+        function selectAll() {
+            document.querySelectorAll('#services-list input[type="checkbox"]').forEach(checkbox => {
+                if (!checkbox.checked) {
+                    checkbox.checked = true;
+                    updateServiceVisual(checkbox.closest('li'));
+                }
+            });
+            calculateTotalAndStrike();
+            saveSelections();
+            showToast('تم اختيار جميع الخدمات', 'success');
         }
-    });
-    if (selected.length === 0) {
-        alert('يرجى اختيار خدمة واحدة على الأقل قبل إرسال الطلب.');
-        return;
-    }
-    let total = document.getElementById('total-price').textContent.trim();
-    let notes = document.getElementById('notes').value.trim();
-    let msg = `مرحباً، أود طلب الخدمات التالية من باقة مغسلة فل أوبشن:\n\n${selected.join("\n")}\n\nالمجموع: ${total} د.إ`;
-    if (notes) {
-        msg += `\n\nملاحظات/طلبات خاصة:\n${notes}`;
-    }
-    if (confirm('هل أنت متأكد من إرسال الطلب عبر واتساب؟')) {
-        let url = `https://wa.me/971505733543?text=${encodeURIComponent(msg)}`;
-        window.open(url, '_blank');
-    }
-};
-</script>
+
+        // Clear all selections
+        function clearAll() {
+            document.querySelectorAll('#services-list input[type="checkbox"]').forEach(checkbox => {
+                if (checkbox.checked) {
+                    checkbox.checked = false;
+                    updateServiceVisual(checkbox.closest('li'));
+                }
+            });
+            calculateTotalAndStrike();
+            saveSelections();
+            showToast('تم إلغاء جميع الاختيارات', 'warning');
+        }
+
+        // Show toast notification
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+            const icon = toast.querySelector('i');
+
+            // Update content
+            toastMessage.textContent = message;
+            
+            // Update icon based on type
+            icon.className = type === 'error' ? 'fas fa-exclamation-circle' : 
+                           type === 'warning' ? 'fas fa-exclamation-triangle' : 'fas fa-check-circle';
+            
+            // Update toast class
+            toast.className = `toast ${type}`;
+            
+            // Show toast
+            toast.classList.add('show');
+            
+            // Hide after delay
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Save selections to localStorage
+        function saveSelections() {
+            const selections = {};
+            document.querySelectorAll('#services-list input[type="checkbox"]').forEach((checkbox, index) => {
+                selections[index] = checkbox.checked;
+            });
+            
+            const notes = document.getElementById('notes').value;
+            
+            localStorage.setItem('serviceSelections', JSON.stringify({
+                selections,
+                notes,
+                timestamp: Date.now()
+            }));
+        }
+
+        // Load saved selections from localStorage
+        function loadSavedSelections() {
+            try {
+                const saved = localStorage.getItem('serviceSelections');
+                if (saved) {
+                    const data = JSON.parse(saved);
+                    
+                    // Check if data is not too old (24 hours)
+                    if (Date.now() - data.timestamp < 24 * 60 * 60 * 1000) {
+                        document.querySelectorAll('#services-list input[type="checkbox"]').forEach((checkbox, index) => {
+                            if (data.selections[index] !== undefined) {
+                                checkbox.checked = data.selections[index];
+                            }
+                        });
+                        
+                        if (data.notes) {
+                            document.getElementById('notes').value = data.notes;
+                        }
+                    }
+                }
+            } catch (e) {
+                console.warn('Could not load saved selections:', e);
+            }
+        }
+
+        // Animate elements on load
+        function animateOnLoad() {
+            const items = document.querySelectorAll('#services-list li');
+            items.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    item.style.transition = 'all 0.5s ease';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        }
+
+        // Debounce function
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // WhatsApp button click handler
+        document.getElementById('whatsapp-btn').addEventListener('click', function() {
+            if (isLoading) return;
+            
+            const selected = [];
+            const unselectedServices = [];
+            
+            document.querySelectorAll('#services-list li').forEach(li => {
+                const checkbox = li.querySelector('input[type="checkbox"]');
+                const title = li.querySelector('.service-title');
+                const price = li.querySelector('.service-price');
+                
+                if (checkbox && title && price) {
+                    const serviceTitle = title.textContent.trim().replace(/^[\w\s]+\s/, ''); // Remove icon
+                    const servicePrice = price.textContent.trim();
+                    
+                    if (checkbox.checked) {
+                        selected.push(`✅ ${serviceTitle} - ${servicePrice}`);
+                    } else {
+                        unselectedServices.push(serviceTitle);
+                    }
+                }
+            });
+
+            if (selected.length === 0) {
+                showToast('يرجى اختيار خدمة واحدة على الأقل قبل إرسال الطلب', 'error');
+                return;
+            }
+
+            const total = document.getElementById('total-price').textContent.trim();
+            const notes = document.getElementById('notes').value.trim();
+
+            let message = `🌟 مرحباً، أود طلب الخدمات التالية من باقة مغسلة فل أوبشن:\n\n`;
+            message += `📋 الخدمات المختارة:\n${selected.join('\n')}\n\n`;
+            message += `💰 إجمالي التكلفة: ${total} د.إ\n\n`;
+
+            if (unselectedServices.length > 0 && unselectedServices.length < 8) {
+                message += `ℹ️ الخدمات غير المختارة:\n${unselectedServices.map(s => `❌ ${s}`).join('\n')}\n\n`;
+            }
+
+            if (notes) {
+                message += `📝 ملاحظات إضافية:\n${notes}\n\n`;
+            }
+
+            message += `🙏 أتطلع للعمل معكم قريباً!\n\n`;
+            message += `📧 تم الإرسال من موقع شركة كاتبي للحلول الرقمية`;
+
+            // Show loading state
+            isLoading = true;
+            const btnText = document.getElementById('btn-text');
+            const originalText = btnText.textContent;
+            btnText.innerHTML = '<span class="loading"></span> جاري الإعداد...';
+
+            setTimeout(() => {
+                const url = `https://wa.me/971505733543?text=${encodeURIComponent(message)}`;
+                window.open(url, '_blank');
+                
+                // Reset button
+                isLoading = false;
+                btnText.textContent = originalText;
+                
+                showToast('تم فتح واتساب بنجاح!', 'success');
+            }, 1000);
+        });
+    </script>
 </body>
 </html>
